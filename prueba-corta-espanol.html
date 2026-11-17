@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4.º grado · Repaso de Homónimos</title>
+<style>
+:root{
+  --navy:#17385f;
+  --teal:#43a89f;
+  --cream:#fff9eb;
+  --cream2:#fff3d4;
+  --blue:#eef6ff;
+  --yellow:#fdb414;
+  --green:#1c9a68;
+  --beige:#eadfca;
+  --ink:#24324a;
+  --muted:#667085;
+  --white:#ffffff;
+  --shadow:0 14px 36px rgba(23,56,95,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%, rgba(253,180,20,.16) 0 10%, transparent 11%),
+    radial-gradient(circle at 92% 7%, rgba(67,168,159,.16) 0 10%, transparent 11%),
+    linear-gradient(180deg,var(--cream) 0%,var(--blue) 100%);
+}
+body.locked{overflow:hidden}
+.wrap{max-width:1120px;margin:auto;padding:18px}
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(145deg,var(--navy),#245786);
+  color:white;
+  border-radius:30px;
+  padding:34px;
+  box-shadow:var(--shadow);
+  margin:10px 0 18px;
+}
+.hero:before,.hero:after{
+  content:"";
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.08)
+}
+.hero:before{width:220px;height:220px;right:-70px;top:-80px}
+.hero:after{width:150px;height:150px;right:120px;bottom:-90px}
+.logo-mark{
+  width:82px;height:82px;border-radius:24px;
+  background:linear-gradient(145deg,var(--yellow),#ffd869);
+  display:grid;place-items:center;
+  color:var(--navy);font-size:2.2rem;font-weight:950;
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+  margin-bottom:16px;
+}
+.eyebrow{
+  display:inline-block;padding:7px 12px;border-radius:999px;
+  background:rgba(255,255,255,.14);font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;font-size:.8rem
+}
+h1{font-size:clamp(2rem,5vw,4.2rem);line-height:.98;margin:14px 0 12px}
+.lead{max-width:780px;line-height:1.65;color:#eaf2fb;font-size:1.05rem}
+.student-line{margin-top:14px;font-weight:800;color:#fff4c8}
+.progress-card{
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:22px;padding:18px;
+  box-shadow:0 10px 26px rgba(0,0,0,.1);
+  color:var(--ink);
+  margin-top:22px;
+}
+.progress{
+  height:16px;background:#e9eef5;border-radius:999px;overflow:hidden;
+  border:1px solid #dde4ee;margin:10px 0 8px
+}
+.bar{
+  width:0;height:100%;
+  background:linear-gradient(90deg,var(--teal),var(--green),var(--yellow));
+  transition:.4s ease
+}
+.progress-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.progress-row strong{color:var(--navy)}
+nav{
+  position:sticky;top:8px;z-index:20;
+  display:flex;gap:9px;flex-wrap:wrap;
+  padding:10px;background:rgba(255,255,255,.9);
+  backdrop-filter:blur(12px);
+  border:1px solid #e3e8ef;border-radius:18px;
+  box-shadow:0 8px 20px rgba(23,56,95,.08);
+  margin-bottom:18px
+}
+nav a{
+  text-decoration:none;color:var(--navy);font-weight:850;
+  padding:9px 12px;border-radius:12px;background:var(--blue);
+  border:1px solid #d9e7f7
+}
+.note{
+  background:linear-gradient(145deg,var(--cream2),#fff);
+  border:1px solid var(--beige);
+  border-left:6px solid var(--yellow);
+  border-radius:18px;padding:15px 17px;line-height:1.55;margin:16px 0 22px
+}
+.game{
+  background:rgba(255,255,255,.96);
+  border:1px solid #e2e7ee;
+  border-radius:26px;padding:22px;
+  box-shadow:var(--shadow);margin:22px 0
+}
+.game-head{
+  display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap;margin-bottom:14px
+}
+.badge{
+  display:inline-block;border-radius:999px;padding:7px 10px;
+  font-size:.8rem;font-weight:900;letter-spacing:.03em
+}
+.b1{background:#fff0b8;color:#624800}
+.b2{background:#dff5f2;color:#176a63}
+.b3{background:#e6f0ff;color:#234e79}
+.b4{background:#e3f6ea;color:#16613f}
+h2{margin:7px 0 0;color:var(--navy);font-size:clamp(1.35rem,3vw,2rem)}
+.tip{color:var(--muted);line-height:1.55;margin:8px 0 16px}
+.frame-shell{
+  border:1px solid #dfe5ec;border-radius:18px;overflow:hidden;background:#fff
+}
+.frame-shell iframe{
+  width:100%;height:min(72vh,650px);min-height:480px;border:0;display:block
+}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.btn{
+  appearance:none;border:0;border-radius:13px;padding:11px 15px;
+  font-weight:900;cursor:pointer;transition:.18s ease;
+  font-size:.95rem
+}
+.btn:hover{transform:translateY(-1px)}
+.complete{background:var(--teal);color:white}
+.complete.done{background:var(--green)}
+.open{background:var(--blue);color:var(--navy);border:1px solid #d9e7f7;text-decoration:none}
+.secondary{background:#fff;color:var(--navy);border:1px solid #dce3eb}
+.certificate-wrap{
+  display:none;
+  background:linear-gradient(145deg,#fff,#fffaf0);
+  border:2px solid var(--yellow);
+  border-radius:28px;padding:26px;
+  box-shadow:var(--shadow);
+  margin:28px 0
+}
+.certificate-wrap.show{display:block}
+.cert-preview{
+  position:relative;overflow:hidden;
+  background:white;border:8px double var(--navy);
+  border-radius:18px;padding:38px 28px;text-align:center
+}
+.cert-preview:before,.cert-preview:after{
+  content:"";position:absolute;width:120px;height:120px;border-radius:50%;opacity:.12
+}
+.cert-preview:before{background:var(--teal);left:-50px;top:-50px}
+.cert-preview:after{background:var(--yellow);right:-50px;bottom:-50px}
+.cert-small{text-transform:uppercase;letter-spacing:.13em;color:var(--teal);font-weight:900}
+.cert-title{font-size:clamp(2rem,5vw,3.7rem);color:var(--navy);font-weight:950;margin:8px 0}
+.cert-name{
+  font-size:clamp(1.7rem,4vw,3rem);color:var(--green);font-weight:950;
+  border-bottom:2px solid var(--beige);display:inline-block;padding:0 24px 8px;margin:14px 0
+}
+.cert-body{font-size:1.05rem;line-height:1.65;max-width:700px;margin:0 auto;color:#46566b}
+.cert-date{margin-top:20px;font-weight:800;color:var(--navy)}
+.footer{text-align:center;color:var(--muted);padding:24px 0 36px}
+.modal{
+  position:fixed;inset:0;z-index:1000;
+  display:grid;place-items:center;padding:18px;
+  background:rgba(16,31,52,.74);backdrop-filter:blur(8px)
+}
+.modal.hidden{display:none}
+.modal-card{
+  width:min(540px,100%);background:white;border-radius:28px;padding:28px;
+  box-shadow:0 24px 70px rgba(0,0,0,.25);text-align:center
+}
+.modal-mark{
+  width:76px;height:76px;border-radius:22px;margin:0 auto 14px;
+  display:grid;place-items:center;background:var(--yellow);color:var(--navy);
+  font-size:2rem;font-weight:950
+}
+.modal-card h2{margin:6px 0 8px}
+.modal-card p{color:var(--muted);line-height:1.55}
+.input{
+  width:100%;padding:14px 15px;border-radius:14px;border:2px solid #dfe6ee;
+  font-size:1rem;outline:none;margin:10px 0 12px
+}
+.input:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(67,168,159,.12)}
+.start{width:100%;background:var(--navy);color:white;padding:13px 16px}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:999}
+.piece{position:absolute;width:10px;height:16px;top:-22px;animation:fall 2.8s linear forwards}
+@keyframes fall{to{transform:translateY(108vh) rotate(900deg);opacity:.15}}
+@media(max-width:720px){
+  .hero{padding:24px}
+  .frame-shell iframe{min-height:540px;height:72vh}
+  .game{padding:16px}
+}
+@media print{
+  body *{visibility:hidden!important}
+  #certificate, #certificate *{visibility:visible!important}
+  #certificate{
+    position:absolute;left:0;top:0;width:100%;
+    box-shadow:none!important;border:none!important;margin:0!important;padding:0!important
+  }
+  #certificate .cert-preview{min-height:92vh;display:flex;flex-direction:column;justify-content:center}
+  #certificate .controls{display:none!important}
+}
+</style>
+</head>
+<body class="locked">
+
+<div class="modal" id="nameModal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+  <div class="modal-card">
+    <div class="modal-mark">4.º</div>
+    <span class="badge b1">Español · Repaso interactivo</span>
+    <h2 id="welcomeTitle">¡Bienvenido a tu misión!</h2>
+    <p>Escribe tu nombre como quieres que aparezca en tu certificado al completar las cuatro actividades.</p>
+    <input class="input" id="studentName" type="text" maxlength="50" placeholder="Nombre del estudiante" autocomplete="name">
+    <button class="btn start" id="startBtn">Comenzar repaso</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="logo-mark">4.º</div>
+    <span class="eyebrow">Español · Prueba corta</span>
+    <h1>🔎 Misión: Homónimos</h1>
+    <p class="lead">
+      Repasa homófonos, homógrafos y el significado de las palabras según el contexto.
+      Completa las cuatro misiones y desbloquea tu certificado.
+    </p>
+    <div class="student-line" id="studentLine">Estudiante: —</div>
+
+    <div class="progress-card" aria-live="polite">
+      <div class="progress-row">
+        <strong>Progreso de la misión</strong>
+        <span id="percentText">0%</span>
+      </div>
+      <div class="progress"><div class="bar" id="bar"></div></div>
+      <div class="progress-row">
+        <span id="progressText">0 de 4 misiones completadas</span>
+        <span>🏆 Meta: 4/4</span>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Navegación del repaso">
+    <a href="#m1">🎧 Misión 1</a>
+    <a href="#m2">✏️ Misión 2</a>
+    <a href="#m3">🔎 Misión 3</a>
+    <a href="#m4">🏆 Misión 4</a>
+    <a href="#certificate">🎓 Certificado</a>
+  </nav>
+
+  <div class="note">
+    <strong>💡 Recuerda:</strong>
+    los <strong>homófonos</strong> suenan igual, pero se escriben diferente.
+    Los <strong>homógrafos</strong> se escriben igual, pero tienen significados diferentes.
+    Lee siempre la oración completa: <strong>el contexto te da la pista</strong>.
+  </div>
+
+  <section class="game" id="m1">
+    <div class="game-head">
+      <div>
+        <span class="badge b1">MISIÓN 1</span>
+        <h2>🎧 Homófonos · Escoge la palabra correcta</h2>
+      </div>
+      <span>⏱️ 5–8 min</span>
+    </div>
+    <p class="tip">Lee la oración completa antes de responder. Busca cuál palabra tiene el significado correcto en ese contexto.</p>
+    <div class="frame-shell">
+      <iframe style="max-width:100%" src="https://wordwall.net/es/embed/ace3391239094c268ad2894c18b9da9b?themeId=1&templateId=5&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen title="Misión 1 - Homófonos"></iframe>
+    </div>
+    <div class="controls">
+      <button class="btn complete" data-id="1">✓ Marcar misión completada</button>
+      <a class="btn open" target="_blank" rel="noopener" href="https://wordwall.net/es/embed/ace3391239094c268ad2894c18b9da9b?themeId=1&templateId=5&fontStackId=0">↗ Abrir grande</a>
+    </div>
+  </section>
+
+  <section class="game" id="m2">
+    <div class="game-head">
+      <div>
+        <span class="badge b2">MISIÓN 2</span>
+        <h2>✏️ Homófonos · Completa las oraciones</h2>
+      </div>
+      <span>⏱️ 5–8 min</span>
+    </div>
+    <p class="tip">Piensa en el significado de cada palabra antes de colocarla. No te dejes llevar solo por cómo suena.</p>
+    <div class="frame-shell">
+      <iframe style="max-width:100%" src="https://wordwall.net/es/embed/fde4c6febe79464b9f2b0dc31ccb3a22?themeId=6&templateId=36&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen title="Misión 2 - Completa las oraciones"></iframe>
+    </div>
+    <div class="controls">
+      <button class="btn complete" data-id="2">✓ Marcar misión completada</button>
+      <a class="btn open" target="_blank" rel="noopener" href="https://wordwall.net/es/embed/fde4c6febe79464b9f2b0dc31ccb3a22?themeId=6&templateId=36&fontStackId=0">↗ Abrir grande</a>
+    </div>
+  </section>
+
+  <section class="game" id="m3">
+    <div class="game-head">
+      <div>
+        <span class="badge b3">MISIÓN 3</span>
+        <h2>🔎 Homógrafos · ¿Qué significa aquí?</h2>
+      </div>
+      <span>⏱️ 5–8 min</span>
+    </div>
+    <p class="tip">La misma palabra puede tener significados diferentes. La oración te ayuda a descubrir cuál corresponde.</p>
+    <div class="frame-shell">
+      <iframe style="max-width:100%" src="https://wordwall.net/es/embed/2ef730923e854c41b782a3b94a09fb41?themeId=65&templateId=5&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen title="Misión 3 - Homógrafos"></iframe>
+    </div>
+    <div class="controls">
+      <button class="btn complete" data-id="3">✓ Marcar misión completada</button>
+      <a class="btn open" target="_blank" rel="noopener" href="https://wordwall.net/es/embed/2ef730923e854c41b782a3b94a09fb41?themeId=65&templateId=5&fontStackId=0">↗ Abrir grande</a>
+    </div>
+  </section>
+
+  <section class="game" id="m4">
+    <div class="game-head">
+      <div>
+        <span class="badge b4">MISIÓN 4</span>
+        <h2>🏆 Reto final · HF o HM</h2>
+      </div>
+      <span>⏱️ 5–8 min</span>
+    </div>
+    <p class="tip">Última misión: decide si los ejemplos corresponden a homófonos (HF) o a homónimos/homógrafos (HM).</p>
+    <div class="frame-shell">
+      <iframe style="max-width:100%" src="https://wordwall.net/es/embed/eac7c57a14bb4d86b21ae133ce1f4ede?themeId=1&templateId=2&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen title="Misión 4 - HF o HM"></iframe>
+    </div>
+    <div class="controls">
+      <button class="btn complete" data-id="4">✓ Marcar misión completada</button>
+      <a class="btn open" target="_blank" rel="noopener" href="https://wordwall.net/es/embed/eac7c57a14bb4d86b21ae133ce1f4ede?themeId=1&templateId=2&fontStackId=0">↗ Abrir grande</a>
+    </div>
+  </section>
+
+  <section class="certificate-wrap" id="certificate">
+    <div class="cert-preview">
+      <div class="cert-small">Certificado de misión completada</div>
+      <div class="cert-title">🎓 ¡Lo lograste!</div>
+      <div>Se reconoce a</div>
+      <div class="cert-name" id="certName">Estudiante</div>
+      <p class="cert-body">
+        por completar las cuatro misiones del repaso de
+        <strong>Homónimos, Homófonos y Homógrafos</strong> de Español de 4.º grado,
+        demostrando práctica, atención al contexto y perseverancia.
+      </p>
+      <div class="cert-date" id="certDate"></div>
+      <div class="controls" style="justify-content:center;margin-top:24px">
+        <button class="btn complete" id="downloadCert">⬇ Descargar certificado PNG</button>
+        <button class="btn secondary" id="printCert">🖨 Imprimir / Guardar PDF</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="controls" style="justify-content:center;margin:24px 0">
+    <button class="btn secondary" id="changeName">✏️ Cambiar nombre</button>
+    <button class="btn secondary" id="reset">↺ Reiniciar progreso</button>
+  </div>
+
+  <footer class="footer">
+    Repaso de Español · 4.º grado · Los juegos se cargan desde Wordwall y requieren conexión a Internet.
+  </footer>
+</div>
+
+<div class="confetti" id="confetti"></div>
+
+<script>
+const keyBase='tiki_homonimos_lms_v1';
+let studentName=localStorage.getItem(keyBase+'_name') || '';
+let completed=JSON.parse(localStorage.getItem(keyBase+'_progress') || '[]');
+
+const modal=document.getElementById('nameModal');
+const input=document.getElementById('studentName');
+
+function showModal(){
+  modal.classList.remove('hidden');
+  document.body.classList.add('locked');
+  input.value=studentName;
+  setTimeout(()=>input.focus(),100);
+}
+
+function hideModal(){
+  modal.classList.add('hidden');
+  document.body.classList.remove('locked');
+}
+
+function cleanName(value){
+  return value.replace(/\s+/g,' ').trim();
+}
+
+function saveName(){
+  const value=cleanName(input.value);
+  if(!value){
+    input.focus();
+    input.style.borderColor='#d94d4d';
+    return;
+  }
+  studentName=value;
+  localStorage.setItem(keyBase+'_name',studentName);
+  updateStudent();
+  hideModal();
+}
+
+function updateStudent(){
+  document.getElementById('studentLine').textContent='Estudiante: '+(studentName || '—');
+  document.getElementById('certName').textContent=studentName || 'Estudiante';
+}
+
+function update(){
+  document.querySelectorAll('.complete[data-id]').forEach(btn=>{
+    const id=btn.dataset.id;
+    const done=completed.includes(id);
+    btn.classList.toggle('done',done);
+    btn.textContent=done ? '✓ Misión completada' : '✓ Marcar misión completada';
+  });
+
+  const n=completed.length;
+  const pct=Math.round((n/4)*100);
+  document.getElementById('bar').style.width=pct+'%';
+  document.getElementById('percentText').textContent=pct+'%';
+  document.getElementById('progressText').textContent=n+' de 4 misiones completadas';
+
+  const cert=document.getElementById('certificate');
+  if(n===4){
+    cert.classList.add('show');
+    setCertificateDate();
+  }else{
+    cert.classList.remove('show');
+  }
+}
+
+function setCertificateDate(){
+  const date=new Date();
+  const formatted=new Intl.DateTimeFormat('es-PR',{
+    day:'numeric',month:'long',year:'numeric'
+  }).format(date);
+  document.getElementById('certDate').textContent='Completado el '+formatted;
+}
+
+function celebrate(){
+  const box=document.getElementById('confetti');
+  box.innerHTML='';
+  const palette=['#17385f','#43a89f','#fdb414','#1c9a68','#eadfca'];
+  for(let i=0;i<85;i++){
+    const p=document.createElement('i');
+    p.className='piece';
+    p.style.left=Math.random()*100+'vw';
+    p.style.background=palette[Math.floor(Math.random()*palette.length)];
+    p.style.animationDelay=(Math.random()*.8)+'s';
+    p.style.transform='rotate('+(Math.random()*180)+'deg)';
+    box.appendChild(p);
+  }
+  setTimeout(()=>box.innerHTML='',3900);
+}
+
+function makeCertificatePNG(){
+  const canvas=document.createElement('canvas');
+  canvas.width=1600;
+  canvas.height=1100;
+  const ctx=canvas.getContext('2d');
+
+  ctx.fillStyle='#fffaf0';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.strokeStyle='#17385f';
+  ctx.lineWidth=18;
+  ctx.strokeRect(40,40,1520,1020);
+  ctx.strokeStyle='#fdb414';
+  ctx.lineWidth=6;
+  ctx.strokeRect(66,66,1468,968);
+
+  ctx.fillStyle='#43a89f';
+  ctx.beginPath();ctx.arc(130,130,90,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#fdb414';
+  ctx.beginPath();ctx.arc(1470,970,120,0,Math.PI*2);ctx.fill();
+
+  ctx.textAlign='center';
+  ctx.fillStyle='#43a89f';
+  ctx.font='bold 34px Arial';
+  ctx.fillText('CERTIFICADO DE MISIÓN COMPLETADA',800,210);
+
+  ctx.fillStyle='#17385f';
+  ctx.font='bold 78px Arial';
+  ctx.fillText('¡Lo lograste!',800,325);
+
+  ctx.fillStyle='#46566b';
+  ctx.font='32px Arial';
+  ctx.fillText('Se reconoce a',800,405);
+
+  ctx.fillStyle='#1c9a68';
+  ctx.font='bold 66px Arial';
+  ctx.fillText(studentName || 'Estudiante',800,505);
+
+  ctx.strokeStyle='#eadfca';
+  ctx.lineWidth=4;
+  ctx.beginPath();ctx.moveTo(380,535);ctx.lineTo(1220,535);ctx.stroke();
+
+  ctx.fillStyle='#46566b';
+  ctx.font='30px Arial';
+  ctx.fillText('por completar las cuatro misiones del repaso de',800,625);
+
+  ctx.fillStyle='#17385f';
+  ctx.font='bold 36px Arial';
+  ctx.fillText('Homónimos, Homófonos y Homógrafos',800,685);
+
+  ctx.fillStyle='#46566b';
+  ctx.font='30px Arial';
+  ctx.fillText('Español · 4.º grado',800,740);
+  ctx.fillText('Práctica, atención al contexto y perseverancia',800,800);
+
+  const dateText=document.getElementById('certDate').textContent;
+  ctx.fillStyle='#17385f';
+  ctx.font='bold 27px Arial';
+  ctx.fillText(dateText,800,900);
+
+  ctx.fillStyle='#17385f';
+  ctx.font='bold 34px Arial';
+  ctx.fillText('4.º',800,1000);
+
+  const link=document.createElement('a');
+  link.download='Certificado_Homonimos_'+(studentName || 'Estudiante').replace(/\s+/g,'_')+'.png';
+  link.href=canvas.toDataURL('image/png');
+  link.click();
+}
+
+document.getElementById('startBtn').addEventListener('click',saveName);
+input.addEventListener('keydown',e=>{if(e.key==='Enter') saveName();});
+
+document.querySelectorAll('.complete[data-id]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const id=btn.dataset.id;
+    const already=completed.includes(id);
+    if(already){
+      completed=completed.filter(x=>x!==id);
+    }else{
+      completed.push(id);
+    }
+    completed=[...new Set(completed)].sort();
+    localStorage.setItem(keyBase+'_progress',JSON.stringify(completed));
+    const before=already ? 4 : completed.length-1;
+    update();
+    if(completed.length===4 && !already){
+      celebrate();
+      setTimeout(()=>document.getElementById('certificate').scrollIntoView({behavior:'smooth'}),700);
+    }
+  });
+});
+
+document.getElementById('reset').addEventListener('click',()=>{
+  completed=[];
+  localStorage.removeItem(keyBase+'_progress');
+  update();
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+document.getElementById('changeName').addEventListener('click',showModal);
+document.getElementById('printCert').addEventListener('click',()=>window.print());
+document.getElementById('downloadCert').addEventListener('click',makeCertificatePNG);
+
+updateStudent();
+update();
+if(studentName) hideModal(); else showModal();
+</script>
+</body>
+</html>
